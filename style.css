@@ -1,0 +1,180 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+}
+
+#container {
+  display: flex;
+  height: 100vh;
+}
+
+#game-container {
+  flex: 2;
+  position: relative;
+  background-image: url('img/background.png');
+  background-size: cover;
+  background-position: center;
+}
+
+#game-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#control-panel {
+  flex: 1;
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#typing-input {
+  padding: 10px;
+  font-size: 1.2em;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+#controls button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #0096c7;
+  color: white;
+  cursor: pointer;
+}
+
+#controls button:hover {
+  background-color: #0077b6;
+}
+
+#score-board, #leaderboard {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+#leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+#leaderboard-list li {
+  background: #444;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+#result-modal {
+  position: fixed; /* 固定定位在視窗中央 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 居中 */
+  background-color: #333; /* 比背景稍深的顏色 */
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* 陰影效果 */
+  text-align: center;
+  z-index: 1000; /* 確保在其他內容之上 */
+  width: 80%; /* 響應式寬度 */
+  max-width: 400px; /* 最大寬度 */
+  display: flex; /* 使用 flexbox 讓內容垂直排列 */
+  flex-direction: column;
+  gap: 15px; /* 元素間距 */
+}
+
+/* 隱藏模態框的樣式 */
+#result-modal.hidden {
+  display: none;
+}
+
+#result-modal h2 {
+  color: #0096c7; /* 標題顏色 */
+  margin-bottom: 15px;
+}
+
+#result-modal p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+#result-modal input[type="text"] {
+  padding: 10px;
+  font-size: 1em;
+  width: calc(100% - 20px); /* 考慮 padding */
+  margin-bottom: 15px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #222;
+  color: white;
+}
+
+#result-modal button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #0096c7; /* 與控制面板按鈕一致的顏色 */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* 平滑過渡效果 */
+}
+
+#result-modal button:hover {
+  background-color: #0077b6;
+}
+
+/* 背景模糊/變暗效果 (可選) */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* 半透明黑色 */
+  backdrop-filter: blur(5px); /* 模糊背景 (現代瀏覽器支持) */
+  z-index: 999; /* 在模態框之下，但覆蓋遊戲內容 */
+}
+
+#overlay.hidden {
+    display: none;
+}
+/* style.css */
+
+/* ... (現有樣式) ... */
+
+#current-word-display {
+  margin-top: 20px;
+  width: 90%;
+  text-align: center;
+  background-color: #444; /* 比背景稍淺的顏色 */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#current-word-display h3 {
+  color: #0096c7; /* 與標題顏色一致 */
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+#current-target-word {
+  font-size: 1.8em; /* 讓單字大一點 */
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px; /* 增加字母間距 */
+}
+
+/* ... (其他樣式) ... */
+/* 將此 div 加入到 index.html 中，在 result-modal 之前 */
+/* <div id="overlay" class="hidden"></div> */
