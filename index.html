@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>打字泡泡挑戰</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+    <div id="game-container">
+      <canvas id="game-canvas"></canvas>
+    </div>
+    <div id="control-panel">
+      <input id="typing-input" type="text" placeholder="輸入文字..." autocomplete="off" />
+      <div id="controls">
+        <button id="start-btn">開始</button>
+        <button id="pause-btn">暫停</button>
+        <button id="restart-btn">重新開始</button>
+      </div>
+      <div id="current-word-display">
+        <h3>當前目標：</h3>
+        <span id="current-target-word"></span>
+      </div> 
+
+      <div id="score-board">
+        分數：<span id="score">0</span> | 時間：<span id="time">60</span>s
+      </div>
+      <div id="leaderboard">
+        <h2>排行榜</h2>
+        <ul id="leaderboard-list"></ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" class="hidden"></div>
+
+  <div id="result-modal" class="hidden">
+    <h2>遊戲結束</h2>
+    <p>總消除泡泡：<span id="final-bubble-count">0</span> 顆</p>
+    <p>平均打字速度：<span id="final-speed">0.00</span> 顆/秒</p>
+    <input type="text" id="nickname" placeholder="輸入暱稱 (可選)" />
+    <button id="submit-score">提交成績</button>
+    <button id="close-modal">開始新遊戲</button>
+  </div>
+  <script type="module" src="game_v2_gemini.js"></script>
+</body>
+</html>
